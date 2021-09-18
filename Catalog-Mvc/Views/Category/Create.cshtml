@@ -1,0 +1,24 @@
+﻿@model Catalog_Mvc.Models.Category
+
+
+<form method="post" asp-action="Create">
+
+    <div asp-validation-summary="ModelOnly"></div>
+    
+    <label asp-for="name">姓名</label>
+    <input asp-for="name" />
+    <span asp-validation-for="name"></span>
+    
+    <br>
+    
+    <label asp-for="display_order">顺序</label>
+    <input asp-for="display_order" />
+     <span asp-validation-for="display_order"></span>
+    
+    
+    <br>
+    
+    <input type="submit" value="创建">
+    <a asp-action="Index"><i class="fas fa-sign-out-alt">返回</i></a>
+    
+</form>

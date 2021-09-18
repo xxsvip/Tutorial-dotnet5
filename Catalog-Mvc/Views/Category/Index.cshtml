@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Catalog_Mvc.Models.Category>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a asp-controller="Category" asp-action="Create"><i class="fas fa-plus">创建</i></a>
+
+@if (Model.Count() > 0)
+{
+    <table>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.id</td>
+                <td>@obj.name</td>
+                <td>@obj.display_order</td>
+                <td><a asp-controller="Category" asp-action="Edit"  asp-route-id="@obj.id"><i class="fas fa-edit">修改</i></a></td>
+                <td><a asp-controller="Category" asp-action="Delete"  asp-route-id="@obj.id"><i class="fas fa-trash-alt">删除</i></a></td>
+            </tr>
+        }
+    </table>
+}
